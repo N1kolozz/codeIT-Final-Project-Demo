@@ -50,3 +50,15 @@
   margin-top: 1rem;
   color: rgb(68, 111, 128);
 }
+
+.passwordWarning {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.validMessage {
+  color: green;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
