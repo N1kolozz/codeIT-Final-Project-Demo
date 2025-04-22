@@ -4,9 +4,33 @@
 }
 .nav {
   width: 30vw;
-  background-color: red;
   position: fixed;
   display: block;
   align-self: center;
-  top: 48px
+  top: 32px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 16px;
+}
+
+
+
+.link {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 16px;
+  height: 40px;
+}
+
+.activeLink {
+
+ background-color: #fff;
+
+}
+
+
+.inActiveLink {
+  color: rgb(95, 94, 94);
 }

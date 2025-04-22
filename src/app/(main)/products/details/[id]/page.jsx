@@ -5,7 +5,8 @@ import Link from "next/link";
 
 const ProductDetails = async ({ params }) => {
 
-  const id = params.id;
+  const {id} = await params;
+  
   let response;
 
   try {
