@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import AddToCart from "@/components/AddToCart/AddToCart";
 
 
 const ProductDetails = async ({ params }) => {
@@ -38,7 +39,7 @@ const ProductDetails = async ({ params }) => {
             <p className={styles.ratingCount}>{product.rating.count} reviews</p>
         </div>
       </div>
-      <button className={styles.addToCart}>Add to cart</button>
+      <AddToCart product={product}/>
     </div>
     <Link href="/products">
       <button className={styles.goBack}>Go back</button>
