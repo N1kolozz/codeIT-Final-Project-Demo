@@ -39,7 +39,7 @@ const ProductDetails = async ({ params }) => {
             <p className={styles.ratingCount}>{product.rating.count} reviews</p>
         </div>
       </div>
-      <AddToCart />
+      <AddToCart product={product}/>
     </div>
     <Link href="/products">
       <button className={styles.goBack}>Go back</button>
