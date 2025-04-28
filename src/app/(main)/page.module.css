@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-around;
   border-radius: 16px;
+  gap: 15px;
 }
 
 
@@ -27,11 +28,15 @@
 
 .activeLink {
 
- background-color: #fff;
+ background-color: #000000;
+ color: #fff;
+ font-family: "Courier New";
 
 }
 
 
 .inActiveLink {
   color: rgb(95, 94, 94);
+  background-color: #bdc3c5;
+  font-family: "Courier New";
 }
