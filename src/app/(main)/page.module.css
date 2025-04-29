@@ -4,13 +4,13 @@
 }
 
 .nav {
-  width: 30vw;
+  width: 90vw;
   position: fixed;
   display: block;
   align-self: center;
   top: 32px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   border-radius: 16px;
   gap: 15px;
 }
