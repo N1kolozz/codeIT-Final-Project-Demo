@@ -1,6 +1,9 @@
 "use client"
+
+
 import React from 'react'
 import { useEffect, useState } from 'react'
+import styles from './page.module.css'
 
 
 
@@ -23,7 +26,7 @@ function page() {
   }, []);
   
   return (
-    <div>
+    <div className={styles.container}>
       
       {cartProducts.map((prod) => (
         <div key={prod.id}>

@@ -1,7 +1,7 @@
 import ProductItem from "@/components/ProductItem/ProductItem";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { headers } from "next/headers";
+
 
 
 const Products = async () => {
