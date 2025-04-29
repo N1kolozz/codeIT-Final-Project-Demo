@@ -4,6 +4,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import styles from './page.module.css'
+import Image from 'next/image'
 
 
 
@@ -13,7 +14,7 @@ function page() {
 
   const getProductsFromStorage = async () => {
     const products = await JSON.parse(localStorage.getItem('products'));
-  
+
     if (products === null || products === undefined) {
       setCartProducts([]);
     } else {
@@ -24,16 +25,32 @@ function page() {
   useEffect(() => {
     getProductsFromStorage();
   }, []);
-  
+
   return (
     <div className={styles.container}>
-      
+
       {cartProducts.map((prod) => (
-        <div key={prod.id}>
-          <h1>{prod.title}</h1>
-          <p>{prod.description}</p>
+        <div className={styles.itemContainer} key={prod.id}>
+          <div>
+            <Image src={prod.image} width={200} height={200} alt="product-image" />
+          </div>
+
+          <div className={styles.infoContainer}>
+            <h2>{prod.title}</h2>
+            <p className={styles.itemDesc}>{prod.description}</p>
+            <h4>{prod.price}$</h4>
+            <div className={styles.ratingWrapper}>
+              <p>{prod.rating.rate}/5</p>
+              <p>{prod.rating.count} reviews</p>
+            </div>
+            <button className={styles.removeBtn} onClick={() => {
+              const updatedProducts = cartProducts.filter((product) => product.id !== prod.id);
+              setCartProducts(updatedProducts);
+              localStorage.setItem('products', JSON.stringify(updatedProducts));
+            }}>Remove</button>
+          </div>
         </div>
-        ))}
+      ))}
     </div>
   );
 }

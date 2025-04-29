@@ -1,7 +1,67 @@
 .container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 140px 40px 0px;
-    gap: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 140px 40px 0px;
+  gap: 80px;
+}
+
+
+.itemContainer {
+  display: flex;
+  width: 60%;
+  gap: 10px;
+}
+
+.ratingWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.removeBtn {
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-style: none;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.itemDesc {
+  font-size: 0.8rem;
+  line-height: 16px;
+  text-align: justify;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-weight: 400;
+  color: rgb(124, 124, 124);
+}
+
+@media (max-width: 1060px) {
+    .container {
+        align-items: center;
+    }
+    .itemContainer {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .itemContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .infoContainer {
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
 }
