@@ -1,3 +1,4 @@
+
 .container {
   height: 100vh;
   display: flex;
@@ -18,13 +19,58 @@
   gap: 10px;
 }
 
-.removeBtn {
-  background-color: #ff0000;
+.removeItem {
+  background-color: #ec6e6e;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   border-style: none;
+  font-size: 1rem;
+  font-family: "Courier New";
+  height: 56px;
+}
+
+.removeOneBtn {
+  background-color: #ec6e6e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-style: none;
+  font-size: 2rem;
+  font-family: "Courier New";
+  height: 56px;
+}
+
+.itemQuantity {
+  font-size: 2rem;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  color: #333;
+  font-family: "Courier New";
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.addOneBtn {
+  background-color: #8a81da;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-style: none;
+  font-size: 2rem;
+  font-family: "Courier New";
+  height: 56px;
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .infoContainer {
@@ -47,21 +93,24 @@
 }
 
 @media (max-width: 1060px) {
-    .container {
-        align-items: center;
-    }
-    .itemContainer {
-        width: 100%;
-    }
+  .container {
+    align-items: center;
+  }
+
+  .itemContainer {
+    width: 100%;
+  }
 }
+
 @media (max-width: 768px) {
-    .itemContainer {
-        flex-direction: column;
-        align-items: center;
-    }
-    .infoContainer {
-        align-items: center;
-        text-align: center;
-        gap: 5px;
-    }
+  .itemContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoContainer {
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+  }
 }

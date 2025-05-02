@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import styles from "./page.module.css";
 import Link from "next/link";
+import SignOut from "@/components/SignOut/SignOut";
 
 
 function layout({ children }) {
@@ -35,6 +36,7 @@ function layout({ children }) {
           >
             Cart
             </Link>
+            <SignOut/>
         </nav>
       {children}
     </div>
