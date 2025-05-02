@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   const checkIfUserExist = async () => {
-    const result = await JSON.parse(localStorage.getItem("user"));
+    const result = await JSON.parse(localStorage.getItem("user" && "userReg"));
     if (result !== null) {
       router.replace("/products", {path: "products"});
     }
@@ -74,7 +74,7 @@ export default function Home() {
       try {
 
 
-        fetch("https://fakestoreapi.com/users", {
+           fetch("https://fakestoreapi.com/users", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -85,9 +85,9 @@ export default function Home() {
         })
           .then((res) => res.json())
           .then((res) => {
-            console.log("this is result data:", res)
             if (res.id) {
-              router.replace("/products");
+              localStorage.setItem("userReg", JSON.stringify(res.id))
+              router.replace("/products", {path: 'products'});
             }
           });
       } catch (error) {
