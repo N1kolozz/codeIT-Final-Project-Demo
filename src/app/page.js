@@ -2,6 +2,7 @@
 import styles from "./page.module.css";
 import { use, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
   const [login, setLogin] = useState(true);
@@ -22,6 +23,17 @@ export default function Home() {
     return setLogin(!login);
   };
 
+  const checkIfUserExist = async () => {
+    const result = await JSON.parse(localStorage.getItem("user"));
+    if (result !== null) {
+      router.replace("/products", {path: "products"});
+    }
+  };
+
+  useEffect(() => {
+    checkIfUserExist();
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -40,7 +52,8 @@ export default function Home() {
           .then((res) => res.json())
           .then((res) => {
             if (res.token) {
-              router.replace("/products");
+              localStorage.setItem("user", JSON.stringify(res.token))
+              router.replace("/products", {path: 'products'});
             }
           });
       } catch (error) {
