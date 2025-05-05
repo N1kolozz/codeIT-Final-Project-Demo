@@ -9,6 +9,7 @@ const SignOut = () => {
     const router = useRouter();
     const handleSignOut = () => {
         localStorage.removeItem("user");
+        localStorage.removeItem("userReg");
         router.replace("/");
       };
     return <button className={styles.signOutBtn} onClick={handleSignOut}>Sign Out</button>
