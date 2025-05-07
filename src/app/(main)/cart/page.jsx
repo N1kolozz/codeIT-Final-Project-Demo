@@ -66,11 +66,11 @@ function page() {
               <p>{prod.product.rating.count} reviews</p>
             </div>
             <div className={styles.btnWrapper}>
-            <button className={styles.removeItem} onClick={() => {
+            <Image className={styles.imageHoverEffect} width={50} height={50} src={"/assets/images/trash-can-10417.svg"} alt='Remove'  onClick={() => {
               const updatedProducts = cartProducts.filter((item) => item.product.id !== prod.product.id);
               setCartProducts(updatedProducts);
               localStorage.setItem('products', JSON.stringify(updatedProducts));
-            }}>Remove Item</button>
+            }}/>
             <button className={styles.removeOneBtn}  onClick={() => handleRemoveOne(prod.product)}>-</button>
             <h2 className={styles.itemQuantity}>{prod.count}</h2>
             <button className={styles.addOneBtn} onClick={() => handleAddOne(prod.product)}>+</button>

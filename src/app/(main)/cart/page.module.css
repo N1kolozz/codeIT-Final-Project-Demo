@@ -19,17 +19,7 @@
   gap: 10px;
 }
 
-.removeItem {
-  background-color: #ec6e6e;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  border-style: none;
-  font-size: 1rem;
-  font-family: "Courier New";
-  height: 56px;
-}
+
 
 .removeOneBtn {
   background-color: #ec6e6e;
@@ -53,6 +43,14 @@
   color: #333;
   font-family: "Courier New";
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.imageHoverEffect {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.imageHoverEffect:hover {
+  transform: scale(1.1);
 }
 
 .addOneBtn {
