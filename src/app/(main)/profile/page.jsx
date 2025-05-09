@@ -30,53 +30,57 @@ const Profile = async () => {
         height={100}
       />
       <section className={styles.section}>
+        <div className={styles.splitContainer}>
         <div className={styles.infoWrapper}>
-          <p>სახელი: </p>
+          <p>FirstName: </p>
           <p>{profile.firstName}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>მაიდენნეიმი: </p>
+          <p>MaidenName: </p>
           <p>{profile.maidenName}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>გვარი: </p>
+          <p>lastName: </p>
           <p>{profile.lastName}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>ტელეფონი: </p>
+          <p>Phone: </p>
           <p>{profile.phone}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>მეილი: </p>
+          <p>Email: </p>
           <p>{profile.email}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>დაბადების თარიღი: </p>
+          <p>BirthDate: </p>
           <p>{profile.birthDate}</p>
         </div>
+        </div>
+        <div className={styles.splitContainer}>
         <div className={styles.infoWrapper}>
-          <p>მისამართი: </p>
+          <p>Address: </p>
           <p>{profile.address.address}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>ქალაქი: </p>
+          <p>City: </p>
           <p>{profile.address.city}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>შტატი: </p>
+          <p>State: </p>
           <p>{profile.address.state}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>უნივერსიტეტი: </p>
+          <p>University: </p>
           <p>{profile.university}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>კომპანია: </p>
+          <p>Company: </p>
           <p>{profile.company.name}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>კომპანიის მისამართი: </p>
+          <p>Company Address: </p>
           <p>{profile.company.address.address}</p>
+        </div>
         </div>
         <SignOut/>
       </section>

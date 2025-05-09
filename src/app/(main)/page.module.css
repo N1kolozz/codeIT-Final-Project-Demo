@@ -33,6 +33,16 @@
   border-radius: 16px;
   height: 40px;
   padding: 2px;
+  transition: all 0.3s ease;
+  font-weight: 900;
+}
+.link:hover {
+  background-color: rgba(0, 0, 0, 0.425);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  
 }
 
 .activeLink {
