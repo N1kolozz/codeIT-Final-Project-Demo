@@ -60,7 +60,7 @@ function page() {
           <div className={styles.infoContainer}>
             <h3>{prod.product.title}</h3>
             <p className={styles.itemDesc}>{prod.product.description}</p>
-            <h4>{prod.product.price}$</h4>
+            <h4 className={styles.price}>{prod.product.price}$</h4>
             <div className={styles.ratingWrapper}>
               <p>{prod.product.rating.rate}/5</p>
               <p>{prod.product.rating.count} reviews</p>
@@ -76,6 +76,7 @@ function page() {
             <button className={styles.addOneBtn} onClick={() => handleAddOne(prod.product)}>+</button>
             </div>
           </div>
+          
         </div>
       ))}
     </div>

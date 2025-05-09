@@ -32,6 +32,14 @@
   font-family: "Courier New";
   height: 56px;
 }
+.removeOneBtn:hover {
+  background-color: #d9534f;
+}
+.removeOneBtn:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+               
+}
 
 .itemQuantity {
   font-size: 2rem;
@@ -64,6 +72,13 @@
   font-family: "Courier New";
   height: 56px;
 }
+.addOneBtn:hover {
+  background-color: #7a71c8;
+} 
+.addOneBtn:active {
+  transform: scale(1.1);
+  transition: transform 0.1s;
+}
 
 .btnWrapper {
   display: flex;
@@ -89,6 +104,12 @@
   font-weight: 400;
   color: rgb(124, 124, 124);
 }
+
+.price {
+  color: rgb(0, 252, 117);
+  font-size: 1.5rem;
+}
+
 
 @media (max-width: 1060px) {
   .container {
