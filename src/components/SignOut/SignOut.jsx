@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import styles from "./SignOut.module.css";
+import { FaSignOutAlt } from 'react-icons/fa';
 
 
 
@@ -12,7 +13,7 @@ const SignOut = () => {
         localStorage.removeItem("userReg");
         router.replace("/");
       };
-    return <button className={styles.signOutBtn} onClick={handleSignOut}>Sign Out</button>
+    return <button className={styles.signOutBtn} onClick={handleSignOut}> <FaSignOutAlt/> Sign Out</button>
 };
 
 export default SignOut;

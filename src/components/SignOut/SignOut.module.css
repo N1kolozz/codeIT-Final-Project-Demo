@@ -1,26 +1,30 @@
 .signOutBtn {
-    background-color: #ff4d4f; 
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    font-family: "Arial", sans-serif;
-  }
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
 
-  @media (max-width: 600px) {
-    .signOutBtn {
-      font-size: 11px;
-    }
+@media (max-width: 600px) {
+  .signOutBtn {
+    font-size: 11px;
   }
-  
-  .signOutBtn:hover {
-    background-color: #e63947b6;
-    transform: translateY(-2px);
-  }
-  
+}
+
+.signOutBtn:hover {
+  background-color: #e63947b6;
+  transform: translateY(-2px);
+}
