@@ -6,6 +6,8 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import SignOut from "@/components/SignOut/SignOut";
 import Footer from "@/components/Footer/Footer";
+import { FaStore, FaUser, FaShoppingCart } from 'react-icons/fa';
+
 
 
 function layout({ children }) {
@@ -19,7 +21,7 @@ function layout({ children }) {
           ${pathname.includes("/products") ? styles.activeLink : styles.inActiveLink}
         `}
           href="/products"
-        >
+        > <FaStore />
           products
         </Link>
         <Link className={`
@@ -28,6 +30,7 @@ function layout({ children }) {
         `}
           href="/profile"
         >
+          <FaUser />
           Profile
         </Link>
         <Link className={`
@@ -36,6 +39,7 @@ function layout({ children }) {
         `}
           href="/cart"
         >
+          <FaShoppingCart />
           Cart
         </Link>
         <SignOut />
