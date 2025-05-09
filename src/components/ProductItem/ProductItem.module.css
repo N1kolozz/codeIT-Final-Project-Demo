@@ -1,5 +1,5 @@
 .itemContainer {
-  height: 380px;
+  height: 400px;
   width: 240px;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -9,6 +9,7 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  margin-bottom: -40px;
 }
 
 .itemContainer:hover {

@@ -1,11 +1,15 @@
 'use client'
 import styles from './AddToCart.module.css'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 
 function AddToCart({product}) {
 
     const router = useRouter();
+      const [showAlert, setShowAlert] = useState(false);
+
+
 
    
 
@@ -28,19 +32,26 @@ function AddToCart({product}) {
             
           
             localStorage.setItem('products', JSON.stringify([...results]))
+            setShowAlert(true);
+            setTimeout(() => setShowAlert(false), 2500);
         }
 
     }
 
 
-    return (
-        <button
-            onClick={handleAddCart}
-            className={styles.addToCart}
-        >
-            Add to cart
-        </button>
-    )
+  return (
+    <>
+      <button onClick={handleAddCart} className={styles.addToCart}>
+        Add to cart
+      </button>
+
+      {showAlert && (
+        <div className={styles.alert}>
+          ✅ Item added to cart!
+        </div>
+      )}
+    </>
+  )
 }
 
 export default AddToCart

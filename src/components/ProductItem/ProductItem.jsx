@@ -23,9 +23,6 @@ function ProductItem({ item }) {
           <Image src={"/assets/images/stars-rating.svg"} width={84} height={10} alt="rating-stars" />
         </div>
       </div>
-      <div className={styles.btnWrapper}>
-        <AddToCart product={item} />
-      </div>
     </section>
   );
 }

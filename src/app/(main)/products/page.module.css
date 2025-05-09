@@ -12,3 +12,8 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.productWrapper {
+  display: flex;
+  flex-direction: column;
+}
