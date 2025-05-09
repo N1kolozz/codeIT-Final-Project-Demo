@@ -37,6 +37,7 @@ const ProductDetails = async ({ params }) => {
         <div className={styles.ratingWrapper}>
             <p className={styles.rating}>{product.rating.rate}/5</p>
             <p className={styles.ratingCount}>{product.rating.count} reviews</p>
+            <Image src={"/assets/images/stars-rating.svg"} width={250} height={37} alt="rating-stars" />
         </div>
       </div>
       <AddToCart product={product}/>

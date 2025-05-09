@@ -2,8 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
   padding: 20px;
-  padding-top: 120px;
-  background: #ededed;
+  padding-top: 50px;
 }

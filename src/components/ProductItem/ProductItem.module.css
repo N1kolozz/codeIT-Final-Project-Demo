@@ -5,10 +5,16 @@
   border-radius: 10px;
   padding: 8px 10px;
   background-color: white;
+  box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .itemContainer:hover {
-  border: 1px solid skyblue;
+  border: 1px solid rgb(75, 3, 134);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 25px rgba(75, 3, 134, 0.3), 0 2px 8px rgba(75, 3, 134, 0.2);
 }
 
 .imageContainer {
@@ -40,7 +46,7 @@
   -webkit-box-orient: vertical;
   font-weight: 400;
   color: rgb(124, 124, 124);
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .priceContainer {
@@ -72,4 +78,10 @@
     font-size: 0.8rem;
     padding-top: 4px;
 
+}
+
+.btnWrapper {
+      margin-top: -15px;
+      display: flex;
+      flex-direction: column;
 }

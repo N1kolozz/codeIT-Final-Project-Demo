@@ -1,21 +1,29 @@
-.container {
-    display: flex;
-    justify-content: center;
+
+
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px; 
 }
 
 .nav {
-  width: 90vw;
+  width: 80vw;
   position: fixed;
-  display: block;
+  display: flex;
   align-self: center;
   top: 32px;
-  display: flex;
   justify-content: center;
   border-radius: 16px;
   gap: 15px;
 }
-
-
 
 .link {
   flex: 1;
@@ -28,13 +36,10 @@
 }
 
 .activeLink {
-
- background-color: #000000;
- color: #fff;
- font-family: "Courier New";
-
+  background-color: #000000;
+  color: #fff;
+  font-family: "Courier New";
 }
-
 
 .inActiveLink {
   color: rgb(95, 94, 94);
