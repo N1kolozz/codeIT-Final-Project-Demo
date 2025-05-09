@@ -6,3 +6,9 @@
   padding: 20px;
   padding-top: 50px;
 }
+
+.loadingStyles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
