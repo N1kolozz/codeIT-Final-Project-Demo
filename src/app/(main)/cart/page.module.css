@@ -18,6 +18,14 @@
   gap: 10px;
 }
 
+.loadingStyles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   height: 50vh;
+}
+
 
 
 .removeOneBtn {
