@@ -1,0 +1,25 @@
+.checkContainer {
+    background-color: #8a81da;
+    width: 100%;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px 0px;
+    color: #fff;
+    transition: 0.3s;
+    font-size: 1.3rem;
+}
+.checkContainer h2 {
+     display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 10px;
+}
+.checkContainer:hover {
+    background-color: #a1d99b;
+    cursor: pointer;
+    transform: translateY(-3px); 
+}
+.container {
+    width: 100%;
+    margin-top: 100px;
+}
