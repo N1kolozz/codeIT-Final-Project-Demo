@@ -4,6 +4,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 
@@ -25,7 +26,7 @@ function page() {
     getProductsFromStorage();
   }, []);
 
-  
+
   const handleAddOne = async (product) => {
     const products = await JSON.parse(localStorage.getItem("products"));
     const index = products.findIndex((item) => item.product.id === product.id);
@@ -53,8 +54,10 @@ function page() {
 
       {cartProducts?.map((prod) => (
         <div className={styles.itemContainer} key={prod.product.id}>
-          <div>
-            <Image src={prod.product.image} width={200} height={200} alt="product-image" />
+          <div className={styles.imageContainer}>
+            <Link key={prod.product.id} href={`/products/details/${prod.product.id}`}>
+              <Image src={prod.product.image} width={200} height={200} alt="product-image" />
+            </Link>
           </div>
 
           <div className={styles.infoContainer}>
@@ -66,17 +69,17 @@ function page() {
               <p>{prod.product.rating.count} reviews</p>
             </div>
             <div className={styles.btnWrapper}>
-            <Image className={styles.imageHoverEffect} width={50} height={50} src={"/assets/images/trash-can-10417.svg"} alt='Remove'  onClick={() => {
-              const updatedProducts = cartProducts.filter((item) => item.product.id !== prod.product.id);
-              setCartProducts(updatedProducts);
-              localStorage.setItem('products', JSON.stringify(updatedProducts));
-            }}/>
-            <button className={styles.removeOneBtn}  onClick={() => handleRemoveOne(prod.product)}>-</button>
-            <h2 className={styles.itemQuantity}>{prod.count}</h2>
-            <button className={styles.addOneBtn} onClick={() => handleAddOne(prod.product)}>+</button>
+              <Image className={styles.imageHoverEffect} width={50} height={50} src={"/assets/images/trash-can-10417.svg"} alt='Remove' onClick={() => {
+                const updatedProducts = cartProducts.filter((item) => item.product.id !== prod.product.id);
+                setCartProducts(updatedProducts);
+                localStorage.setItem('products', JSON.stringify(updatedProducts));
+              }} />
+              <button className={styles.removeOneBtn} onClick={() => handleRemoveOne(prod.product)}>-</button>
+              <h2 className={styles.itemQuantity}>{prod.count}</h2>
+              <button className={styles.addOneBtn} onClick={() => handleAddOne(prod.product)}>+</button>
             </div>
           </div>
-          
+
         </div>
       ))}
     </div>
