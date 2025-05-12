@@ -52,48 +52,79 @@ function page() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.allProductsContainer}> 
-        {cartProducts?.map((prod) => (
-          <div className={styles.itemContainer} key={prod.product.id}>
-            <div className={styles.imageContainer}>
-              <Link key={prod.product.id} href={`/products/details/${prod.product.id}`}>
-                <Image src={prod.product.image} width={200} height={200} alt="product-image" />
-              </Link>
-            </div>
-
-            <div className={styles.infoContainer}>
-              <h3>{prod.product.title}</h3>
-              <p className={styles.itemDesc}>{prod.product.description}</p>
-              <h4 className={styles.price}>{prod.product.price}$</h4>
-              <div className={styles.ratingWrapper}>
-                <p>{prod.product.rating.rate}/5</p>
-                <p>{prod.product.rating.count} reviews</p>
-              </div>
-              <div className={styles.btnWrapper}>
-                <Image className={styles.imageHoverEffect} width={50} height={50} src={"/assets/images/trash-can-10417.svg"} alt='Remove' onClick={() => {
-                  const updatedProducts = cartProducts.filter((item) => item.product.id !== prod.product.id);
-                  setCartProducts(updatedProducts);
-                  localStorage.setItem('products', JSON.stringify(updatedProducts));
-                }} />
-                <button className={styles.removeOneBtn} onClick={() => handleRemoveOne(prod.product)}>-</button>
-                <h2 className={styles.itemQuantity}>{prod.count}</h2>
-                <button className={styles.addOneBtn} onClick={() => handleAddOne(prod.product)}>+</button>
-              </div>
-            </div>
+      <div className={styles.allProductsContainer}>
+        {cartProducts.length === 0 ? (
+          <div className={styles.emptyCart}>
+            <h2>Your cart is empty</h2>
+            <Link href={"/products"}>Go to products</Link>
           </div>
-        ))}
-        {cartProducts.length === 0 && (
-        <div className={styles.emptyCart}>
-          <h2>Your cart is empty</h2>
-          <Link href={"/products"}>Go to products</Link>
-        </div>
-      )}
-        <Checkout />
-      </div>
-      
+        ) : (
+          <>
+            {cartProducts.map((prod) => (
+              <div className={styles.itemContainer} key={prod.product.id}>
+                <div className={styles.imageContainer}>
+                  <Link href={`/products/details/${prod.product.id}`}>
+                    <Image
+                      src={prod.product.image}
+                      width={200}
+                      height={200}
+                      alt="product-image"
+                    />
+                  </Link>
+                </div>
 
+                <div className={styles.infoContainer}>
+                  <h3>{prod.product.title}</h3>
+                  <p className={styles.itemDesc}>{prod.product.description}</p>
+                  <h4 className={styles.price}>{prod.product.price}$</h4>
+                  <div className={styles.ratingWrapper}>
+                    <p>{prod.product.rating.rate}/5</p>
+                    <p>{prod.product.rating.count} reviews</p>
+                  </div>
+                  <div className={styles.btnWrapper}>
+                    <Image
+                      className={styles.imageHoverEffect}
+                      width={50}
+                      height={50}
+                      src={"/assets/images/trash-can-10417.svg"}
+                      alt="Remove"
+                      onClick={() => {
+                        const updatedProducts = cartProducts.filter(
+                          (item) => item.product.id !== prod.product.id
+                        );
+                        setCartProducts(updatedProducts);
+                        localStorage.setItem(
+                          "products",
+                          JSON.stringify(updatedProducts)
+                        );
+                      }}
+                    />
+                    <button
+                      className={styles.removeOneBtn}
+                      onClick={() => handleRemoveOne(prod.product)}
+                    >
+                      -
+                    </button>
+                    <h2 className={styles.itemQuantity}>{prod.count}</h2>
+                    <button
+                      className={styles.addOneBtn}
+                      onClick={() => handleAddOne(prod.product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+
+            <Checkout />
+          </>
+        )}
+      </div>
     </div>
   );
+
 }
 
 export default page
