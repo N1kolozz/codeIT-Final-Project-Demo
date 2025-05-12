@@ -2,12 +2,15 @@
 import styles from './AddToCart.module.css'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { usePathname } from "next/navigation";
 
 
 function AddToCart({ product }) {
 
   const router = useRouter();
   const [showAlert, setShowAlert] = useState(false);
+
+  const pathname = usePathname();
 
 
 
@@ -19,15 +22,19 @@ function AddToCart({ product }) {
     if (results === null) {
       localStorage.setItem('products', JSON.stringify([{ product: product, count: 1 }]))
 
+    } else if (pathname.includes("/details")) {
+
+      router.replace("/products", { path: "products" });
+
     } else {
       const index = results.findIndex(item => item.product.id === product.id)
 
       if (index > -1) {
-        router.replace("/products", { path: "products" });
+
         results[index].count++;
       } else {
         results.push({ product: product, count: 1 });
-        router.replace("/products", { path: "products" });
+
       }
 
 
