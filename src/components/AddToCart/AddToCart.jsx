@@ -4,39 +4,40 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 
-function AddToCart({product}) {
+function AddToCart({ product }) {
 
-    const router = useRouter();
-      const [showAlert, setShowAlert] = useState(false);
+  const router = useRouter();
+  const [showAlert, setShowAlert] = useState(false);
 
 
 
-   
 
-    const handleAddCart = async () => {
-        const results = await JSON.parse(localStorage.getItem('products'));
 
-        if (results === null) {
-            localStorage.setItem('products', JSON.stringify([{product: product, count: 1}]))
-            
-        } else {
-            const index = results.findIndex(item => item.product.id === product.id)
+  const handleAddCart = async () => {
+    const results = await JSON.parse(localStorage.getItem('products'));
 
-            if (index > -1) {
-                router.replace("/products", {path: "products"});
-                results[index].count++;
-            } else {
-                results.push({ product: product, count: 1});
-                router.replace("/products", {path: "products"});
-            }
-            
-          
-            localStorage.setItem('products', JSON.stringify([...results]))
-            setShowAlert(true);
-            setTimeout(() => setShowAlert(false), 2500);
-        }
+    if (results === null) {
+      localStorage.setItem('products', JSON.stringify([{ product: product, count: 1 }]))
+
+    } else {
+      const index = results.findIndex(item => item.product.id === product.id)
+
+      if (index > -1) {
+        router.replace("/products", { path: "products" });
+        results[index].count++;
+      } else {
+        results.push({ product: product, count: 1 });
+        router.replace("/products", { path: "products" });
+      }
+
+
+      localStorage.setItem('products', JSON.stringify([...results]))
 
     }
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 2500);
+
+  }
 
 
   return (
