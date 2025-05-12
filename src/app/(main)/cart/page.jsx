@@ -82,14 +82,15 @@ function page() {
             </div>
           </div>
         ))}
-        <Checkout />
-      </div>
-      {cartProducts.length === 0 && (
+        {cartProducts.length === 0 && (
         <div className={styles.emptyCart}>
           <h2>Your cart is empty</h2>
           <Link href={"/products"}>Go to products</Link>
         </div>
       )}
+        <Checkout />
+      </div>
+      
 
     </div>
   );

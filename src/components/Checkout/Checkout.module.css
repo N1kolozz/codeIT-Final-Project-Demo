@@ -20,6 +20,12 @@
     transform: translateY(-3px); 
 }
 .container {
-    width: 100%;
+    width: 95vw;
     margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 85vw;
+    }
 }
