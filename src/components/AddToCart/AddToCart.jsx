@@ -22,18 +22,15 @@ function AddToCart({ product }) {
     if (results === null) {
       localStorage.setItem('products', JSON.stringify([{ product: product, count: 1 }]))
 
-    } else if (pathname.includes("/details")) {
-
-      router.replace("/products", { path: "products" });
-
     } else {
       const index = results.findIndex(item => item.product.id === product.id)
 
       if (index > -1) {
-
+        router.replace("/products", { path: "products" });
         results[index].count++;
       } else {
         results.push({ product: product, count: 1 });
+        router.replace("/products", { path: "products" });
 
       }
 
