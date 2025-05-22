@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# codeIT-Final-Project-Demo
+
+A modern shopping cart web application built with [Next.js](https://nextjs.org/), React, and CSS Modules. Users can browse products, view details, add items to their cart, and manage their cart with persistent storage.
+
+---
+
+## Features
+
+- **User Authentication:** Sign up and sign in with form validation.
+- **Product Listing:** Browse products fetched from an external API.
+- **Product Details:** View detailed information for each product.
+- **Shopping Cart:** Add and remove products, with cart state saved in local storage.
+- **Profile Page:** View user profile information.
+- **Responsive Design:** Optimized for desktop and mobile devices.
+
+---
+
+## Project Structure
+
+```
+codeIT-Final-Project-Demo/
+├── public/                # Static assets (SVGs, images)
+├── src/
+│   ├── app/
+│   │   ├── (main)/
+│   │   │   ├── cart/      # Cart page and styles
+│   │   │   ├── products/  # Product listing and details
+│   │   │   ├── profile/   # User profile page
+│   │   │   └── ...        # Other main pages
+│   │   ├── components/    # Reusable UI components
+│   │   ├── layout.js      # Root layout
+│   │   └── page.js        # Entry point (login/signup)
+│   └── ...                # Other source folders
+├── package.json
+├── next.config.js
+├── jsconfig.json
+├── .gitignore
+└── README.md
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+git clone https://github.com/yourusername/codeIT-Final-Project-Demo.git
+cd codeIT-Final-Project-Demo
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Run the development server
 
-## Learn More
+```sh
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+- **Sign In / Sign Up:** Start at the home page to authenticate.
+- **Browse Products:** Navigate to the Products page to view all items.
+- **View Details:** Click on a product to see more information and add it to your cart.
+- **Manage Cart:** Go to the Cart page to review or remove items.
+- **Profile:** Access your profile information from the Profile page.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Technologies Used
+
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [CSS Modules](https://nextjs.org/docs/pages/building-your-application/styling/css-modules)
+- [Fake Store API](https://fakestoreapi.com/) (for product data)
+- [DummyJSON](https://dummyjson.com/) (for user profile data)
+
+---
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
+
+---
+
+## Acknowledgements
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Fake Store API](https://fakestoreapi.com/)
+- [DummyJSON](https://dummyjson.com/)
