@@ -13,9 +13,9 @@
 }
 
 .itemContainer:hover {
-  border: 1px solid rgb(75, 3, 134);
+  border: 1px solid rgb(0, 192, 150);
   transform: translateY(-5px);
-  box-shadow: 0 4px 25px rgba(75, 3, 134, 0.3), 0 2px 8px rgba(75, 3, 134, 0.2);
+  box-shadow: 0 4px 25px rgba(0, 192, 150, 0.3), 0 2px 8px rgba(0, 192, 150, 0.2);
   z-index: 999;
   position: relative;
 }
